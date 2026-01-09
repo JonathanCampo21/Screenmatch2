@@ -1,13 +1,19 @@
+package br.com.jonathan.screenmatch.modelos;
+
 public class Filme {
     String nome;
     int anoDeLancamento;
     boolean incluidoNoPlano;
-    double somaDasAvaliacoes;
-    int totalDeAvaliacoes;
+    private double somaDasAvaliacoes;
+    private int totalDeAvaliacoes;
     int duracaoEmMinutos;
 
+    int getTotalDeAvaliacoes(){
+        return totalDeAvaliacoes;
+    }
+
     void exobeFichaTecnica(){
-        System.out.println("Nome do Filme " + nome);
+        System.out.println("Nome do br.com.jonathan.screenmatch.modelos.Filme " + nome);
         System.out.println("Ano de Lançamento " + anoDeLancamento);
     }
 

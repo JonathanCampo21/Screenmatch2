@@ -1,7 +1,4 @@
-import com.sun.source.util.SourcePositions;
-
-import java.sql.SQLOutput;
-import java.util.Arrays;
+import br.com.jonathan.screenmatch.modelos.Filme;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -16,9 +13,7 @@ public class Principal {
         meuFilme.avalia(8);
         meuFilme.avalia(10);
         meuFilme.avalia(5);
-        System.out.println(meuFilme.somaDasAvaliacoes);
-        System.out.println(meuFilme.totalDeAvaliacoes);
+        System.out.println("Total de avaliações" + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
-
     }
 }
