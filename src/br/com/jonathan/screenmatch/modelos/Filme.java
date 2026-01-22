@@ -1,29 +1,30 @@
 package br.com.jonathan.screenmatch.modelos;
 
-public class Filme {
-    String nome;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
-    private double somaDasAvaliacoes;
-    private int totalDeAvaliacoes;
-    int duracaoEmMinutos;
+import br.com.jonathan.screenmatch.calculos.Classificavel;
 
-    int getTotalDeAvaliacoes(){
-        return totalDeAvaliacoes;
+    public class Filme extends Titulo implements Classificavel {
+        private String diretor;
+
+        public Filme(String nome, int anoDeLancamento) {
+            super(nome, anoDeLancamento);
+        }
+
+        public String getDiretor() {
+        return diretor;
     }
 
-    void exobeFichaTecnica(){
-        System.out.println("Nome do br.com.jonathan.screenmatch.modelos.Filme " + nome);
-        System.out.println("Ano de Lançamento " + anoDeLancamento);
+        public void setDiretor(String diretor) {
+        this.diretor = diretor;
     }
 
-    void avalia(double nota){
-        somaDasAvaliacoes += nota;
-        totalDeAvaliacoes++;
-    }
+        @Override
+        public int getClassificacao() {
+            return (int) pegaMedia() / 2;
+        }
 
-    double pegaMedia(){
-        return somaDasAvaliacoes / totalDeAvaliacoes;
-    }
+        @Override
 
-}
+        public String toString() {
+            return "Filme " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
+        }
+    }
